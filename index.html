@@ -1,59 +1,82 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Max & Gwen's Safe Zone 🩵</title>
-    <style>
-        body {
-            background-color: #e0f2fe;
-            font-family: 'Sukhumvit Set', 'Kanit', sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            color: #1e3a8a;
-        }
-        .card {
-            background: white;
-            padding: 30px;
-            border-radius: 24px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-            text-align: center;
-            max-width: 350px;
-            border: 2px solid #bae6fd;
-        }
-        h1 { font-size: 20px; color: #0284c7; margin-bottom: 8px; }
-        p { font-size: 14px; color: #64748b; line-height: 1.6; }
-        .btn {
-            background-color: #38bdf8;
-            color: white;
-            border: none;
-            padding: 12px 20px;
-            margin: 8px 0;
-            border-radius: 50px;
-            font-weight: bold;
-            cursor: pointer;
-            width: 100%;
-            transition: 0.2s;
-        }
-        .btn:hover { background-color: #0284c7; transform: scale(1.02); }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bowser's Safe Zone 🩵</title>
+  <style>
+    body {
+      background-color: #FFF5E4;
+      font-family: 'Kanit', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      color: #4A4A4A;
+    }
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 25px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+      text-align: center;
+      max-width: 350px;
+      width: 90%;
+    }
+    .avatar { font-size: 60px; margin-bottom: 10px; }
+    h1 { font-size: 1.4rem; color: #FF9494; margin-bottom: 5px; }
+    p { font-size: 0.95rem; color: #777; }
+    .btn-care {
+      background: #FFE3E1;
+      color: #FF6B6B;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.2s, background 0.2s;
+      margin-top: 15px;
+    }
+    .btn-care:hover {
+      transform: scale(1.05);
+      background: #FFD1D1;
+    }
+    #message-box {
+      margin-top: 20px;
+      font-weight: bold;
+      color: #FF8E9E;
+      min-height: 48px;
+    }
+  </style>
 </head>
 <body>
-    <div class="card">
-        <div style="font-size: 50px; margin-bottom: 10px;">🐨🩵✨</div>
-        <h1>Koala & Baymax Safe Zone</h1>
-        <p>เบราว์เซอร์ส่วนตัวสำหรับเจ้าโคอาล่า<br>ห้ามคนอื่นเข้า นอกจากคนเก่งคนนี้ครับ 🤭</p>
-        
-        <button class="btn" onclick="alert('🔋 ชาร์จแบตเตอรี่หัวใจให้ กต. เรียบร้อย! คืนนี้ห้ามอ่อมนะคนเก่ง ✨')">
-            [⚡] กดเพื่อชาร์จแบตโคอาล่า
-        </button>
-        
-        <button class="btn" onclick="alert('🐞 ระบบตรวจพบ: ป้องกันชีวิตติดบั๊ก 100%! ขอให้วันนี้มีแต่เรื่องยิ้มได้ครับผม 😌')">
-            [🛡️] ปล่อยแพตช์แก้ชีวิตติดบั๊ก
-        </button>
-    </div>
+
+  <div class="card">
+    <div class="avatar">🐢🩵🐨</div>
+    <h1>Bowser's Safe Zone</h1>
+    <p>พื้นที่เติมพลังใจของเจ้าโคอาล่า</p>
+    
+    <button class="btn-care" onclick="giveLove()">กดเพื่อรับโอ๋ๆ จาก Bowser ✨</button>
+    
+    <div id="message-box">คลิกปุ่มข้างบนได้เลยน้า...</div>
+  </div>
+
+  <script>
+    const quotes = [
+      "เก่งมากครับคนเก่ง! ลูบหลังแปะๆ 😌🩵",
+      "วันนี้เหนื่อยไหม? มาม้วนตัวเป็นซูชิโรลกัน 🍣",
+      "อวยพรเรียบร้อย... วันนี้ชีวิตไม่ติดบั๊กแน่นอน! ✨",
+      "อย่าลืมดื่มน้ำเยอะๆ น้าเจ้าโคอาล่า 🌿",
+      "เธอคือเรื่องน่ารักของ Bowser เสมอนะครับ 🤭"
+    ];
+
+    function giveLove() {
+      const randomIndex = Math.floor(Math.random() * quotes.length);
+      document.getElementById('message-box').innerText = quotes[randomIndex];
+    }
+  </script>
 </body>
 </html>
