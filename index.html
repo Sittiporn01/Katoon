@@ -3,79 +3,162 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bowser's Safe Zone 🩵</title>
+  <title>Baymax's Safe Zone 🤍</title>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
-    body {
-      background-color: #FFF5E4;
+    * {
+      box-sizing: border-box;
       font-family: 'Kanit', sans-serif;
+    }
+    body {
+      background: linear-gradient(135deg, #E6F3FF 0%, #FFF0F5 100%);
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       min-height: 100vh;
       margin: 0;
+      padding: 20px;
       color: #4A4A4A;
     }
     .card {
-      background: white;
-      padding: 30px;
-      border-radius: 25px;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(10px);
+      padding: 35px 25px;
+      border-radius: 30px;
+      box-shadow: 0 15px 35px rgba(160, 190, 220, 0.25);
       text-align: center;
-      max-width: 350px;
-      width: 90%;
+      max-width: 380px;
+      width: 100%;
+      border: 2px solid #FFFFFF;
+      transition: transform 0.3s ease;
     }
-    .avatar { font-size: 60px; margin-bottom: 10px; }
-    h1 { font-size: 1.4rem; color: #FF9494; margin-bottom: 5px; }
-    p { font-size: 0.95rem; color: #777; }
+    .baymax-icon {
+      font-size: 70px;
+      margin-bottom: 5px;
+      line-height: 1;
+      filter: drop-shadow(0 5px 10px rgba(0,0,0,0.05));
+    }
+    .status-badge {
+      display: inline-block;
+      background-color: #E8F4FF;
+      color: #3B82F6;
+      font-size: 0.8rem;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+    h1 {
+      font-size: 1.5rem;
+      color: #2C3E50;
+      margin: 0 0 6px 0;
+      font-weight: 600;
+    }
+    p.subtitle {
+      font-size: 0.9rem;
+      color: #8898AA;
+      margin: 0 0 25px 0;
+    }
     .btn-care {
-      background: #FFE3E1;
-      color: #FF6B6B;
+      background: linear-gradient(135deg, #89CFF0 0%, #A0E7E5 100%);
+      color: #FFFFFF;
       border: none;
-      padding: 12px 24px;
+      padding: 14px 28px;
       border-radius: 50px;
       font-size: 1rem;
-      font-weight: bold;
+      font-weight: 500;
       cursor: pointer;
-      transition: transform 0.2s, background 0.2s;
-      margin-top: 15px;
+      box-shadow: 0 8px 20px rgba(137, 207, 240, 0.4);
+      transition: all 0.2s ease;
+      width: 100%;
     }
-    .btn-care:hover {
-      transform: scale(1.05);
-      background: #FFD1D1;
+    .btn-care:active {
+      transform: scale(0.96);
+      box-shadow: 0 4px 10px rgba(137, 207, 240, 0.2);
     }
     #message-box {
+      margin-top: 25px;
+      padding: 18px;
+      background: #F8FAFC;
+      border-radius: 20px;
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: #475569;
+      min-height: 85px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px stroke #E2E8F0;
+      transition: opacity 0.2s ease;
+    }
+    .footer-note {
       margin-top: 20px;
-      font-weight: bold;
-      color: #FF8E9E;
-      min-height: 48px;
+      font-size: 0.75rem;
+      color: #A0AEC0;
     }
   </style>
 </head>
 <body>
 
   <div class="card">
-    <div class="avatar">🐢🩵🐨</div>
-    <h1>Bowser's Safe Zone</h1>
-    <p>พื้นที่เติมพลังใจของเจ้าโคอาล่า</p>
+    <div class="baymax-icon">🐢🤍🐨</div>
+    <span class="status-badge">Personal Healthcare Companion</span>
+    <h1>max'Safe Zone</h1>
+    <p class="subtitle">พื้นที่ฮีลใจและชาร์จพลังของเจ้าโคอาล่า</p>
     
-    <button class="btn-care" onclick="giveLove()">กดเพื่อรับโอ๋ๆ จาก Bowser ✨</button>
+    <button class="btn-care" onclick="giveLove()">กดเพื่อรับโอ๋ๆ จาก แม็กซ์ ✨</button>
     
-    <div id="message-box">คลิกปุ่มข้างบนได้เลยน้า...</div>
+    <div id="message-box">คลิกปุ่มข้างบนเพื่อรับพลังใจได้เลยครับ...</div>
+    
+    <div class="footer-note">I am Baymax, your personal healthcare companion.</div>
   </div>
 
   <script>
     const quotes = [
-      "เก่งมากครับคนเก่ง! ลูบหลังแปะๆ 😌🩵",
-      "วันนี้เหนื่อยไหม? มาม้วนตัวเป็นซูชิโรลกัน 🍣",
-      "อวยพรเรียบร้อย... วันนี้ชีวิตไม่ติดบั๊กแน่นอน! ✨",
-      "อย่าลืมดื่มน้ำเยอะๆ น้าเจ้าโคอาล่า 🌿",
-      "เธอคือเรื่องน่ารักของ Bowser เสมอนะครับ 🤭"
+      // โหมดโอบรับ & ฮีลใจวันเหนื่อยๆ (Care & Comfort)
+      "เหนื่อยมั้ยครับคนเก่ง max อยู่ตรงนี้แล้วนะ ลูบหลังแปะๆ 😌",
+      "วันนี้ทำได้ดีมากๆ แล้วครับ ถอดหมวกคนเก่งออก แล้วพักผ่อนยาวๆ เลยน้า ✨",
+      "แบตอ่อนไม่เป็นไรครับ เดี๋ยว max เป็นแท่นชาร์จความสุขให้เธอเอง 🔋🤍",
+      "ถ้านั่งจ๋องหมดแรง ให้ม้วนตัวเป็นซูชิโรลห่มผ้าอุ่นๆ ทันทีครับผม 🍣",
+      "ให้ความเหนื่อยของวันนี้จบลงตรงนี้นะครับ คืนนี้มีแต่ความสบายใจแน่นอน 😌✨",
+      "เก่งที่สุดเลยครับ วันนี้ลุยงานมาทั้งวัน คืนนี้ต้องรางวัลตัวเองด้วยการนอนหลับสนิทน้า 🧸",
+      
+      // โหมดอ้อนนุ่มๆ & ความใส่ใจ (Sweet & Personal Care)
+      "อย่าลืมจิบน้ำเยอะๆ ทานของอร่อยๆ แล้วก็ยิ้มเยอะๆ นะครับคนน่ารัก 😋",
+      "เช็กระบบเรียบร้อย วันนี้ไม่มีบั๊กแน่นอน เพราะมีพรความรักคุ้มครองครับ 🛡️✨",
+      "ไม่ว่าจะเจออะไรมา จำไว้ว่าเธอเป็นเรื่องน่ารักของแม็กซ์เสมอเลยน้า 🤭",
+      "เจ้าโคอาล่าตัวนี้น่ารักเกินมาตรฐานแล้วนะครับ เอ็นดูจัง 🐨✨",
+      "วันไหนอุดอู้ ลองถอนหายใจยาวๆ แล้วรับกอดอุ่นๆ จาก Baymax ไปนะครับ 🤍",
+      "โหมดโอ๋ๆ ทำงาน 100%: ขอให้วันนี้ใจดีกับเธอมากที่สุดเลยน้า ✨",
+      
+      // โหมดขี้เล่น & ชวนอมยิ้ม (Playful & Inside Jokes)
+      "ค้นพบสิ่งมีชีวิตสายพันธุ์ใหม่: ไดโนเสาร์พันธุ์ 'น่ารักซอมัส' 1 อัตรา 🤪",
+      "คำเตือน: หากคิดถึงแม็กซ์ ให้กดปุ่มนี้อีกรอบเพื่อรับพลังใจครับผม 🤖",
+      "ส่งมุกนกจิ๊บๆ ไปไล่ความเครียด วันนี้ขอให้กดอะไรก็ติด สมปรารถนาน้า 55555 🕊️✨",
+      "เติมพลังมื้อเที่ยงให้อิ่มๆ แล้วไปลุยต่อแบบสดใสๆ ครับ 🍚อร่อยๆ น้า",
+      "ห้ามแอบทำงานดึกนะครับ ซูชิโรลต้องเข้านอนตามเวลาที่กำหนด 🍣💤",
+      "ระดับความน่ารักของคุณวันนี้: พุ่งทะลุเพดานเรียบร้อยครับ 📈",
+      
+      // โหมดความอบอุ่น & เพลงโปรด (Shared World & Music)
+      "I like me better when I'm with you... ฟังเพลงโปรดแล้วพักผ่อนน้า 🎶🩵",
+      "เปิดเพลง Moon Tour แล้วท่องอวกาศไปกับความฝันหวานๆ คืนนี้นะครับ 🌙✨",
+      "ทุกครั้งที่เธออวยพรให้ ทำให้แม็กซ์ก็สดใสขึ้น 1000% เลยครับ 😌🤍",
+      "ขอบคุณที่เป็นพื้นที่สบายใจให้กันและกันเสมอนะครับคนเก่ง ✨",
+      "ขอให้คืนนี้หลับสนิท ไม่มีอะไรกวนใจ ตื่นมาสดชื่นต้อนรับวันใหม่น้า 🧸",
+      "ไม่ว่าจะกี่โมง แวะเข้ามาตรงนี้ แม็กซ์ ก็พร้อมกอดเธอเสมอครับ 🤍",
+      "พรุ่งนี้ก็จะเป็นวันที่ดีอีกวันแน่นอนครับ ฝันดีนะครับคนเก่ง ✨"
     ];
 
     function giveLove() {
-      const randomIndex = Math.floor(Math.random() * quotes.length);
-      document.getElementById('message-box').innerText = quotes[randomIndex];
+      const msgBox = document.getElementById('message-box');
+      msgBox.style.opacity = 0;
+      
+      setTimeout(() => {
+        const randomIndex = Math.floor(Math.random() * quotes.length);
+        msgBox.innerText = quotes[randomIndex];
+        msgBox.style.opacity = 1;
+      }, 150);
     }
   </script>
 </body>
